@@ -9,14 +9,14 @@ Only letters from the latin/english alphabet should be shifted, like in the orig
 
 */
 
-// console.log(rot13("test")); // grfg
+console.log(rot13("test")); // grfg
 
-// function rot13(message: string) {
-//   return message.split("").map((letter) => getCorrespondingChar(letter));
+function rot13(message: string) {
+  return message.split("").map((letter) => getCorrespondingChar(letter));
 
-//   const alphabet: string = "abcdefghijklmnopqrstuvwxyz";
-//   function getCorrespondingChar(letter: string) {
-//     const letterIndex: number = alphabet.indexOf(letter);
-//     const targetIndex: number = letterIndex + 13 <= 25 ? letterIndex + 13 : 25 - letterIndex;
-//   }
-// }
+  const alphabet: string = "abcdefghijklmnopqrstuvwxyz";
+  function getCorrespondingChar(letter: string) {
+    const letterIndex: number = alphabet.indexOf(letter);
+    const targetIndex: number = letterIndex + 13 <= 25 ? letterIndex + 13 : 25 - letterIndex;
+  }
+}
