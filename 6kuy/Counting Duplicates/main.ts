@@ -17,11 +17,9 @@ console.log(duplicateCount("aA11")); // 2
 console.log(duplicateCount("indivisibility")); // 1
 
 export function duplicateCount(text: string): number {
-  
   const charCounts = text.toLowerCase().split('').reduce((map: any, letter: string) => {
     map[letter] = ~~map[letter] + 1;
     return map;
   }, {});
-  
   return Object.keys(charCounts).filter(key => charCounts[key] > 1).length;
 }
