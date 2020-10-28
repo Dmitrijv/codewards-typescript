@@ -9,9 +9,9 @@ Only letters from the latin/english alphabet should be shifted, like in the orig
 
 */
 
-console.log(rot13("test")); // grfg
+console.log(rot13ts("test")); // grfg
 
-function rot13(message: string) {
+function rot13ts(message: string) {
   return message.split("").map((letter) => getCorrespondingChar(letter));
 
   const alphabet: string = "abcdefghijklmnopqrstuvwxyz";
