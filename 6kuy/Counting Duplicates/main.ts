@@ -6,6 +6,10 @@ Write a function that will return the count of distinct case-insensitive alphabe
 occur more than once in the input string. The input string can be assumed to contain only alphabets 
 (both uppercase and lowercase) and numeric digits.
 
+clever 1liner by Unnamed
+
+return _(text).countBy(_.toUpper).values().filter(x => x > 1).size();
+
 */
 
 console.log(duplicateCount("abcde")); // 0
