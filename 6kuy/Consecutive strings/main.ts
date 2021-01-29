@@ -15,14 +15,31 @@ consecutive strings : follow one after another without an interruption
 */
 
 export function longestConsec(strarr: string[], k: number): string {
-  const longestStrings: string[] = [];
+  console.log(k);
+  console.log(strarr);
 
-  let maxValue: number = 0;
-  let maxValueIndex: number;
-  for (let i = 0; i < strarr.length; i++) {
-    const string = strarr[i];
-      if string.length > maxValue
+  if (k <= 0) return "";
+
+  let longestString: string = "";
+
+  const tailOffset = k - 1;
+  for (let i = 0; i < strarr.length - tailOffset; i++) {
+    const joinedString = joinArrayStrings(i, k - 1, strarr);
+    if (joinedString) {
+      longestString = joinedString.length > longestString.length ? joinedString : longestString;
+    }
   }
 
-  return "";
+  return longestString;
+
+  function joinArrayStrings(startIndex: number, elementCount: number, array: string[]) {
+    let returnString: string = array[startIndex];
+    let pointer = startIndex;
+    while (elementCount > 0) {
+      pointer++;
+      returnString = returnString + array[pointer];
+      elementCount--;
+    }
+    return returnString;
+  }
 }
